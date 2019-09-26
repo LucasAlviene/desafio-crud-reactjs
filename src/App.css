@@ -1,0 +1,53 @@
+nav .brand-logo{
+  margin-top:5px;
+}
+h4.title{
+  font-weight:bold;
+  color:#263238;
+  font-size:28px;
+}
+
+table{
+  box-shadow:1px 0 7px 0px #dedede;
+}
+form .input-field{
+  margin-bottom:15px;
+}
+form .input-field:not(.error) .helper-text{
+  display:none;
+}
+form .input-field.error .helper-text,form .input-field.error label{
+  color:#F44336 !important;
+}
+form .input-field.error input{
+  border-bottom: 1px solid #F44336 !important;
+  -webkit-box-shadow: 0 1px 0 0 #F44336 !important;
+  box-shadow: 0 1px 0 0 #F44336 !important;
+}
+nav{
+  margin-bottom:20px;
+}
+.card .info-user p{
+  margin-bottom:10px;
+}
+.preloader-wrapper.center{
+  margin: 25px auto;
+  display: block;
+}
+.page-footer{
+  margin-top:25px;
+  padding:0;
+}
+main {
+  min-height: calc(100vh - 151px);
+}
+table thead tr th:not(:last-child){
+  cursor: pointer;
+}
+.legend{
+  color:#666;
+  font-size:13px;
+}
+form .btn.blue-grey.left{
+  margin-right: 10px;
+}
