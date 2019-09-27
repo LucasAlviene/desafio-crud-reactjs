@@ -27,7 +27,7 @@ export default () => {
         setLoading(false);
     }
 
-     const changeValue = (event) => {
+    const changeValue = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         let tempUser = {...usuario[0]};
@@ -35,7 +35,7 @@ export default () => {
         setUsuario([tempUser]);
 
         let tempError = {...errorInput};
-        tempError[name] = value == "" ? true : false;
+        tempError[name] = value === "" ? true : false;
         setErrorInput(tempError);
     }
     const {nome,vaga,data,email} = usuario[0];
@@ -73,7 +73,7 @@ export default () => {
                             name="data"
                             type="date"
                             nome="Data de Nascimento"
-                            msg={data == "" ? "Você não preencheu sua data de nascimento" : "A data de nascimento é inválida"}
+                            msg={data === "" ? "Você não preencheu sua data de nascimento" : "A data de nascimento é inválida"}
                             value={data}
                         />
                         <InputText 
@@ -82,7 +82,7 @@ export default () => {
                             name="email"
                             nome="E-mail"
                             type="email"
-                            msg={email == "" ? "Você não preencheu seu email" : "Seu email é inválido"}
+                            msg={email === "" ? "Você não preencheu seu email" : "Seu email é inválido"}
                             value={email}
                         />
                         <div className='row'>

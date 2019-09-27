@@ -5,7 +5,7 @@ import Moment from 'moment';
 export default (props) => {
     const item = props.data;
     return(
-        <tr key={props.key}>
+        <tr>
             <td>{item.id}</td>
             <td>{item.nome}</td>
             <td>{item.vaga}</td>

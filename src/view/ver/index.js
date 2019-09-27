@@ -10,6 +10,7 @@ export default ({match}) => {
     const [usuario, setUsuario] = useState([]);
     const [loading, setLoading] = useState(null);
     const [msg,setMsg] = useState({color:'',msg:'',show:true});
+    const instance = window.M.Modal.init(document.querySelector('.modal#modalConfirma'), []);
 
     if(loading == null){
         setLoading(true);
@@ -20,7 +21,7 @@ export default ({match}) => {
             sleep(1000).then(() => { // Simular latência do servidor
                 setLoading(false);
                 setUsuario(data.data);
-                if(data.data.length == 0){
+                if(data.data.length === 0){
                     setMsg({color:'blue',msg:'Não foi possivel encontrar esse usuário',show:false});
                 }
             });
@@ -28,8 +29,6 @@ export default ({match}) => {
     }
 
     const openModal = () => {
-        var element = document.querySelector('.modal#modalConfirma');
-        var instance = window.M.Modal.init(element, []);
         instance.open();
     }
     const deleteUser = async () => {

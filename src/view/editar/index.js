@@ -22,7 +22,7 @@ export default ({match}) => {
             sleep(1000).then(() => { // Simular latência do servidor
                 setLoading(false);
                 let tempUser = data.data;
-                if(data.data.length == 0){
+                if(data.data.length === 0){
                     setMsg({color:'blue',msg:'Não foi possivel encontrar esse usuário',show:false});
                 }else{
                     tempUser[0].data = Moment.unix(tempUser[0].data).format("YYYY-MM-DD");
@@ -56,7 +56,7 @@ export default ({match}) => {
         setUsuario([tempUser]);
 
         let tempError = {...errorInput};
-        tempError[name] = value == "" ? true : false;
+        tempError[name] = value === "" ? true : false;
         setErrorInput(tempError);
     }
     const {nome,vaga,data,email} = usuario[0];
@@ -99,7 +99,7 @@ export default ({match}) => {
                                     name="data"
                                     type="date"
                                     nome="Data de Nascimento"
-                                    msg={data == "" ? "Você não preencheu sua data de nascimento" : "A data de nascimento é inválida"}
+                                    msg={data === "" ? "Você não preencheu sua data de nascimento" : "A data de nascimento é inválida"}
                                     value={data}
                                     isActive={true}
                                 />
@@ -109,7 +109,7 @@ export default ({match}) => {
                                     name="email"
                                     nome="E-mail"
                                     type="email"
-                                    msg={email == "" ? "Você não preencheu seu email" : "Seu email é inválido"}
+                                    msg={email === "" ? "Você não preencheu seu email" : "Seu email é inválido"}
                                     value={email}
                                     isActive={true}
                                 />

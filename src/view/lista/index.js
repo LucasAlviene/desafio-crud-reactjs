@@ -30,15 +30,15 @@ export default (props) => {
     }
 
     const ordernar = coluna => {
-        const order = sort.order == "asc" ? "desc" : "asc";
+        const order = sort.order === "asc" ? "desc" : "asc";
         setSort({coluna,order});
-        consultar("_sort="+coluna+"&_order="+order);
+        consultar("?_sort="+coluna+"&_order="+order);
     }
 
     const orderText = coluna => {
-        if(coluna == sort.coluna){
-            if(sort.order == "asc") return <i class="material-icons">arrow_drop_up</i>;
-            return <i class="material-icons">arrow_drop_down</i>;
+        if(coluna === sort.coluna){
+            if(sort.order === "asc") return <i className="material-icons">arrow_drop_up</i>;
+            return <i className="material-icons">arrow_drop_down</i>;
         }
     }
     return (
@@ -60,6 +60,12 @@ export default (props) => {
                 </thead>
                 <tbody>
                     {lista.map( (item,key) => <Item key={key} data={item}/>)}
+                    {lista.length === 0 &&
+                        <tr>
+                            <td style={{textAlign:'center'}} colSpan={6}>Nenhum usuário encontrado</td>
+                        </tr>
+
+                    }
                 </tbody>
             </table>
             <span className='legend'>Mostrando {lista.length} Usuários.</span>
